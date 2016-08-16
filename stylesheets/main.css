@@ -2,3 +2,35 @@
 * {
   box-sizing: border-box;
 }
+
+.container {
+  width: 533px;
+}
+
+
+/*  ****STYLING FOR HEADER/TITLE****
+[x] - background of rgb(66, 139, 202);
+[x] - font color of white
+[x] - border radius ~3px?
+[x] - width of 533px and height of 75px
+[x] - font family of helvetica/sans-serif
+[x] - box-shadow left, top, right - rgb(120, 120, 120);
+*/
+
+.header {
+  background-color: rgb(66, 139, 202);
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0px 0px 5px rgb(120, 120, 120);
+  display: inline-block;
+  height: 75px;
+  line-height: 75px;
+  padding: 0 24px;
+  width: 533px;
+}
+.title {
+  color: white;
+  font-family: Helvetica, sans-serif;
+  font-weight: lighter;
+  font-size: 1.5rem;
+  margin: 0;
+}
