@@ -17,13 +17,15 @@ document.addEventListener("DOMContentLoaded", function(){
             input.options.forEach(function(option){
               inputHTML += `<option value='${option.value}'>${option.label}</option>`;
             });
-          inputHTML += "</select";
-        }
-        // `
-        //   <input type="${input.type}"
-        //          id="${input.id}"
-        //          placeholder="${input.label}">
-        // `;
+          inputHTML += "</select>";
+        }else if(input.type === "textarea"){
+          inputHTML += `<textarea class="form--textarea">${input.label}</textarea>`;
+        }else{
+          inputHTML = `<input type="${input.type}"
+                              id="${input.id}"
+                              placeholder="${input.label}">`;
+        };
+
         formHTML += inputHTML;
       });
     formElement.innerHTML = formHTML;
