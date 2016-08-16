@@ -8,8 +8,29 @@ document.addEventListener("DOMContentLoaded", function(){
 
   requestData.addEventListener("load", function(e){
     var data = JSON.parse(e.target.response);
+    var formHTML = "";
+
+    data.forEach(function(input){
+      var inputHTML = "";
+        if(input.type === "select"){
+          inputHTML += "<select class='form--select'>";
+            input.options.forEach(function(option){
+              inputHTML += `<option value='${option.value}'>${option.label}</option>`;
+            });
+          inputHTML += "</select";
+        }
+        // `
+        //   <input type="${input.type}"
+        //          id="${input.id}"
+        //          placeholder="${input.label}">
+        // `;
+        formHTML += inputHTML;
+      });
+    formElement.innerHTML = formHTML;
     console.log(data);
   });
+
+
 
 
 
