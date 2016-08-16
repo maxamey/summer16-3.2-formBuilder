@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   var requestData = new XMLHttpRequest();
   var formElement = document.querySelector("[data-js='form--container']");
-  var formFooterElement = document.querySelector("[data-js='form--footer']");
+  // var formFooterElement = document.querySelector("[data-js='form--footer']");
 
 
   requestData.addEventListener("load", function(e){
@@ -13,13 +13,14 @@ document.addEventListener("DOMContentLoaded", function(){
     data.forEach(function(input){
       var inputHTML = "";
         if(input.type === "select"){
-          inputHTML += "<select class='form--select'>";
+          inputHTML += `<select class='form--select'>`;
             input.options.forEach(function(option){
-              inputHTML += `<option value='${option.value}'>${option.label}</option>`;
+              inputHTML += `<option value="${option.value}">${option.label}</option>`;
             });
           inputHTML += "</select>";
         }else if(input.type === "textarea"){
-          inputHTML += `<textarea class="form--textarea">${input.label}</textarea>`;
+          inputHTML += `<textarea class="form--textarea"
+                                  placeholder="${input.label}"></textarea>`;
         }else{
           inputHTML = `<input type="${input.type}"
                               id="${input.id}"
