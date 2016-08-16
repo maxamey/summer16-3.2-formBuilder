@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function(){
                                   placeholder="${input.label}"></textarea>`;
         }else{
           inputHTML = `<input type="${input.type}"
+                              class="form__text"
                               id="${input.id}"
                               placeholder="${input.label}">`;
         };
